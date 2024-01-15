@@ -1,0 +1,22 @@
+.resume-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  
+  .resume-item {
+   
+  }
+  
+  .resume-item h1 {
+    margin-bottom: 5px;
+  }
+  
+  .resume-item span {
+    
+  }
+  .text-center{
+    font-size: xx-large;
+  }
+  
