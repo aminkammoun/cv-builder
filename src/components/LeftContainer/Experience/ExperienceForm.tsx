@@ -43,7 +43,7 @@ const ExperienceForm: React.FC<ExperienceCom> = ({handleChange}) => {
                             name='company'
                             value={experienceData.company}
                             onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
+                            className="form-input mt-1 block w-full text-black"
                         />
                     </label>
                     <label className="block mb-2">

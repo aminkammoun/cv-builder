@@ -18,7 +18,7 @@ const AddHint: React.FC<AddHintProps> = ({ label, onAddClick }) => {
           e.stopPropagation();
           onAddClick();
         }}
-        className="w-full  border border-slate-300 hover:border-slate-400  text-black px-2 py-4 rounded-md hover:bg-gray-400 focus:outline-none focus:shadow-outline-green active:bg-teal-800"
+        className="w-full  border border-slate-300 hover:border-slate-400  px-2 py-4 rounded-md hover:bg-gray-400 hover:text-black focus:outline-none focus:shadow-outline-green"
       >
         Add {label}
       </button>

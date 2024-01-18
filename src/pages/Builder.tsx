@@ -6,7 +6,7 @@ import MiddleContainer from '../components/MiddleContainer/MiddleContainer';
 
 const HorizontalThreeSectionComponent: React.FC = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen bg-black ">
       {/* First Section */}
       <section className="flex-1/5 p-4 max-w-md overflow-y-auto">
   
@@ -14,7 +14,7 @@ const HorizontalThreeSectionComponent: React.FC = () => {
       </section>
 
       {/* Second Section */}
-      <section className="flex-1 p-4">
+      <section className="flex-1">
         
         <MiddleContainer />
       </section>

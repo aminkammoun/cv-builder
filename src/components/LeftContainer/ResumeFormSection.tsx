@@ -9,7 +9,7 @@ const ResumeFormSection: React.FC = () => {
   
  
   return (
-    <div className="w-full max-w-lg ">
+    <div className="w-full max-w-lg text-white">
 
     <Basics />
     <hr />

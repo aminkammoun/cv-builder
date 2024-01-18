@@ -26,7 +26,7 @@ const Index: React.FC = () => {
             <div className='flex items-center'>
 
                 <TrophyIcon className='w-6 h-6 mr-5' />
-                <label htmlFor="education" className="block text-3xl font-bold text-gray-700">
+                <label htmlFor="education" className="block text-3xl font-bold">
                     Certification
                 </label>
             </div>

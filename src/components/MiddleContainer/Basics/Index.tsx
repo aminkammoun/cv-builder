@@ -1,11 +1,12 @@
 import React from 'react'
 import { useResumeContext } from '../../../context/ResumeContext';
 import { PhoneIcon, LinkIcon, InboxIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 const Index: React.FC = () => {
   const { resumeData } = useResumeContext();
   
   return (
-    <div className="basicStyle">
+    <>
       <div className='text-center'>
 
         <span>{resumeData.basics.firstName} {resumeData.basics.lastName}</span> <br></br>
@@ -22,7 +23,7 @@ const Index: React.FC = () => {
 
           <div className="flex-1 resume-item flex justify-between">
             
-            <span className='ml-1 flex items-center space-x-4'><MapPinIcon className='h-4 w-4 mr-3'  /> {resumeData.basics.location} </span>
+            <span className='ml-1 flex items-center space-x-4'><MapPinIcon className='h-4 w-4 mr-1.5'  /> {resumeData.basics.location} </span>
             <span>|</span>
           </div>
         }
@@ -30,7 +31,7 @@ const Index: React.FC = () => {
           resumeData.basics.phone &&
           <div className="flex-1 resume-item flex justify-between">
             
-            <span className='ml-1 flex items-center space-x-4'><PhoneIcon className='h-4 w-4 mr-3' /> {resumeData.basics.phone}</span>
+            <span className='ml-1 flex items-center space-x-4'><PhoneIcon className='h-4 w-4 mr-1.5' /> {resumeData.basics.phone}</span>
             <span>|</span>
           </div>
         }
@@ -39,21 +40,23 @@ const Index: React.FC = () => {
 
           <div className="flex-1 resume-item flex justify-between">
             
-            <span className='ml-1 flex items-center space-x-4'><InboxIcon className='h-4 w-4 mr-3'/> {resumeData.basics.email} </span>
+            <span className='ml-1 flex items-center space-x-4'><InboxIcon className='h-4 w-4 mr-1.5'/> {resumeData.basics.email} </span>
             <span>|</span>
           </div>
         }
         {
           resumeData.basics.website &&
           <div className="flex-1 resume-item flex items-center">
-            <LinkIcon className='h-4 w-4 mr-3' />
-            <span className='ml-1'> {resumeData.basics.website}</span>
+            <Link to={resumeData.basics.website}>
+            <LinkIcon className='h-4 w-4 mr-1.5' />
+            </Link>
+           
           </div>
         }
 
 
       </div>
-    </div>);
+    </>);
 };
 
 export default Index

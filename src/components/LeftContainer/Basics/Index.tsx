@@ -43,13 +43,13 @@ const Index: React.FC = () => {
     <div>
       <div className="flex items-center">
       <UserCircleIcon className='w-6 h-6 mr-5'/> 
-      <h1 className="block text-3xl font-bold text-gray-700">Basics</h1>
+      <h1 className="block text-3xl font-bold ">Basics</h1>
       </div>
       <div className='flex justify-between items-center space-x-4'>
         <div>
 
 
-          <label htmlFor="firstName" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="firstName" className="block text-sm font-bold ">
             First Name
           </label>
 
@@ -58,7 +58,7 @@ const Index: React.FC = () => {
             name="firstName"
             id="firstName"
             autoComplete="given-name"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
             value={resumeData.basics.firstName || ''}
             onChange={(e) => handleChange(e)}
           />
@@ -66,7 +66,7 @@ const Index: React.FC = () => {
         <div>
 
 
-          <label htmlFor="lastName" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="lastName" className="block text-sm font-bold ">
             Last Name
           </label>
 
@@ -75,14 +75,14 @@ const Index: React.FC = () => {
             name="lastName"
             id="lastName"
             autoComplete="given-name"
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
             value={resumeData.basics.lastName || ''}
             onChange={(e) => handleChange(e)}
           />
         </div>
       </div>
       <div>
-        <label htmlFor="headline" className="block text-sm font-bold text-gray-700">
+        <label htmlFor="headline" className="block text-sm font-bold ">
           headline
         </label>
 
@@ -91,7 +91,7 @@ const Index: React.FC = () => {
           name="headline"
           id="headline"
           autoComplete="tel"
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
           value={resumeData.basics.headline || ''}
           onChange={(e) => handleChange(e)}
         />
@@ -99,7 +99,7 @@ const Index: React.FC = () => {
       <div className="mb-2 mt-2 flex justify-between items-center space-x-4">
 
         <div className='space-y-2'>
-          <label htmlFor="email" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="email" className="block text-sm font-bold ">
             Email
           </label>
           <input
@@ -108,10 +108,10 @@ const Index: React.FC = () => {
             name="email"
             value={resumeData.basics.email || ''}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
           /></div>
         <div className='space-y-2'>
-          <label htmlFor="website" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="website" className="block text-sm font-bold ">
             Website
           </label>
           <input
@@ -120,13 +120,13 @@ const Index: React.FC = () => {
             name="website"
             value={resumeData.basics.website || ''}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
           /></div>
       </div>
 
       <div className="mb-2 flex justify-between items-center space-x-4">
         <div className='space-y-2'>
-          <label htmlFor="phone" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="phone" className="block text-sm font-bold ">
             Phone
           </label>
           <input
@@ -135,11 +135,11 @@ const Index: React.FC = () => {
             name="phone"
             value={resumeData.basics.phone || ''}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
           />
         </div>
         <div className='space-y-2'>
-          <label htmlFor="location" className="block text-sm font-bold text-gray-700">
+          <label htmlFor="location" className="block text-sm font-bold ">
             Location
           </label>
           <input
@@ -148,7 +148,7 @@ const Index: React.FC = () => {
             name="location"
             value={resumeData.basics.location || ''}
             onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
           />
         </div>
 

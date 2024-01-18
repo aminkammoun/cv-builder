@@ -5,7 +5,7 @@ const Index: React.FC = () => {
     const { resumeData } = useResumeContext();
 
     return (
-        <div className="basicStyle">
+    
             <div >
                 {
                     resumeData.education.length> 0 && <div>
@@ -34,7 +34,6 @@ const Index: React.FC = () => {
 
 
 
-        </div>
     );
 };
 
