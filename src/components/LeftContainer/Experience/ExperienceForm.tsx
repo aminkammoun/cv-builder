@@ -10,6 +10,7 @@ const ExperienceForm: React.FC<ExperienceCom> = ({handleChange}) => {
         {
             company: '',
             position: '',
+            location:'',
             startDate: '',
             endDate: '',
             summary: '',
@@ -58,7 +59,7 @@ const ExperienceForm: React.FC<ExperienceCom> = ({handleChange}) => {
                 </div>
                 
                     
-                <div className="mb-4 rounded-md flex space-x-4">
+                <div className="mb-4 rounded-md flex space-x-4  justify-between">
                     <Input
                         content={"Start year"}
                         type="date"

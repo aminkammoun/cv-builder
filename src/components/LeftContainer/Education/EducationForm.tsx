@@ -57,7 +57,7 @@ const EducationForm: React.FC<EducationCom> = ({ handleChange }) => {
                     />
 
                 </div>
-                <div className="mb-4 rounded-md flex space-x-4">
+                <div className="mb-4 rounded-md flex space-x-4 justify-between">
                     <Input
                         content={"startDate"}
                         type="date"

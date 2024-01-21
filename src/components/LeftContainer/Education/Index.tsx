@@ -39,7 +39,7 @@ const Index: React.FC = () => {
             <AddHint label="education" onAddClick={() => handleAdd('education')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>
-                <EducationForm handleChange={handleChange} />
+                {onClose && <EducationForm handleChange={handleChange} />} 
             </Modal>
 
 

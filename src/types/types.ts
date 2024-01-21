@@ -24,6 +24,7 @@ export interface ResumeData {
   export interface Experience {
     company: string;
     position: string;
+    location:string,
     startDate: string;
     endDate?: string; // Optional if still working
     summary: string;

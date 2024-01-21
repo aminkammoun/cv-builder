@@ -73,7 +73,7 @@ const Index: React.FC = () => {
       <div>
       <Input 
           placeholder={'headline'} 
-          label={'headlne'} 
+          label={'headline'} 
           type={'text'} 
           content={'headline'} 
           value={resumeData.basics.headline || ''}
@@ -108,7 +108,7 @@ const Index: React.FC = () => {
         <Input 
           placeholder={'phone'} 
           label={'phone'} 
-          type={'link'} 
+          type={'number'} 
           content={'phone'}
           value={resumeData.basics.phone || ''}
           onChange={handleChange} />
@@ -117,7 +117,7 @@ const Index: React.FC = () => {
         <Input 
           placeholder={'location'} 
           label={'location'} 
-          type={'link'} 
+          type={'text'} 
           content={'location'}
           value={resumeData.basics.location || ''}
           onChange={handleChange} />

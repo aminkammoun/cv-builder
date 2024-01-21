@@ -63,7 +63,7 @@ function Modal({
         leaveStart="opacity-100 scale-100"
         leaveEnd="opacity-0 scale-95"
       >
-        <div className="bg-slate-950 border-solid p-3 w-1/3 flex justify-center" ref={modalContent}>          
+        <div className="bg-slate-950 border-solid p-5 flex justify-center" ref={modalContent}>          
           {children}
         </div>
       </Transition>    
