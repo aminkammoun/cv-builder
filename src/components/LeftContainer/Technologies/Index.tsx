@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from '../../../utils/Modal'; 
 //import { CheckBadgeIcon, CheckIcon } from '@heroicons/react/16/solid';
 import AddHint from '../../../partials/AddHint';
-import { LanguageIcon } from '@heroicons/react/24/outline';
+import { PuzzlePieceIcon } from '@heroicons/react/24/outline';
 
 
 
@@ -31,18 +31,18 @@ const Index: React.FC = () => {
         <div className="mb-4 ">
             <div className='flex items-center'>
 
-                <LanguageIcon className='w-6 h-6 mr-5' />
-                <label htmlFor="languages" className="block text-3xl font-bold ">
-                    Languages
+                <PuzzlePieceIcon className='w-6 h-6 mr-5' />
+                <label htmlFor="Technologies" className="block text-3xl font-bold ">
+                    Technologies
                 </label>
             </div>
             <div>
                
             </div>
-            <AddHint label="Languages" onAddClick={() => handleAdd('Languages')} />
+            <AddHint label="Technologies" onAddClick={() => handleAdd('Technologies')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>
-                <h1>Language  Model</h1>
+                <h1>Technologies  Model</h1>
             </Modal>
 
 
