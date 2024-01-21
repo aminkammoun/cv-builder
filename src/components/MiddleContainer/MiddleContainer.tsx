@@ -31,7 +31,7 @@ const MiddleContainer: React.FC = () => {
 
   return (
     <TransformWrapper
-
+      
       centerOnInit
       maxScale={2}
       minScale={0.4}

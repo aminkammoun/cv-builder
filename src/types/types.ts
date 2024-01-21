@@ -16,7 +16,9 @@ export interface ResumeData {
   export interface Education {
     institution: string;
     degree: string;
-    graduationYear: number;
+    endDate: string;
+    startDate: string;
+    summary: string;
   }
   
   export interface Experience {
@@ -24,9 +26,10 @@ export interface ResumeData {
     position: string;
     startDate: string;
     endDate?: string; // Optional if still working
+    summary: string;
   }
   
-  interface Skill {
+  export interface Skill {
     name: string;
     proficiency: string; // You can use enums or specific values here
   }

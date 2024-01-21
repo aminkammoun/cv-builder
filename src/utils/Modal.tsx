@@ -37,7 +37,7 @@ function Modal({
     <>
       {/* Modal backdrop */}
       <Transition
-        className="fixed inset-0 z-50 bg-white bg-opacity-75 transition-opacity backdrop-blur-sm"
+        className="fixed inset-0 z-50 bg-gray-950 bg-opacity-75 transition-opacity backdrop-blur-sm"
         show={show}
         enter="transition ease-out duration-200"
         enterStart="opacity-0"
@@ -63,7 +63,7 @@ function Modal({
         leaveStart="opacity-100 scale-100"
         leaveEnd="opacity-0 scale-95"
       >
-        <div className="bg-white border-solid p-5 w-1/3" ref={modalContent}>          
+        <div className="bg-slate-950 border-solid p-3 w-1/3 flex justify-center" ref={modalContent}>          
           {children}
         </div>
       </Transition>    

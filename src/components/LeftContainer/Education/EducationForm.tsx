@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Education } from '../../../types/types';
-interface EducationCom{
-    handleChange: (data : Education) => void;
-  }
-  
-const EducationForm: React.FC<EducationCom> = ({handleChange}) => {
+import Input from '../../../partials/Input';
+interface EducationCom {
+    handleChange: (data: Education) => void;
+}
+
+const EducationForm: React.FC<EducationCom> = ({ handleChange }) => {
     const [educationData, setEducationData] = useState<Education>(
         {
             institution: '',
             degree: '',
-            graduationYear: 2023,
+            startDate:'',
+            endDate: '',
+            summary: '',
         }
     );
 
@@ -28,55 +31,58 @@ const EducationForm: React.FC<EducationCom> = ({handleChange}) => {
         console.log('Updated EducationData:', educationData);
     }, [educationData])
 
-    
+
 
     return (
-        <>
-            <form className="max-w-md w-full m-auto rounded-md">
+        <div className='space-y-3'>
 
-                <div className="mb-4 p-2 bg-white rounded-md flex space-x-4">
-                    <label className="block mb-2">
-                        Institution:
-                        <input
-                            type="text"
-                            name='institution'
-                            value={educationData.institution}
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                    </label>
-                    <label className="block mb-2">
-                        Degree:
-                        <input
-                            type="text"
-                            name='degree'
-                            value={educationData.degree}
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                    </label>
-                    <label className="block mb-2">
-                        Graduation Year:
-                        <input
-                            type="text"
-                            value={educationData.graduationYear}
-                            name='graduationYear'
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                    </label>
+            <form className=" rounded-md">
+                <h2>Add New Education</h2>
+                <div className="mt-4 rounded-md flex space-x-4 ">
+                    <Input
+                        content={'institution'}
+                        type={'text'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'institution'}
+                        label={'institution'}
+                        value={educationData.institution || ''}
+                    />
+                    <Input
+                        content={'degree'}
+                        type={'text'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'degree'}
+                        label={'degree'}
+                        value={educationData.degree || ''}
+                    />
 
                 </div>
+                <div className="mb-4 rounded-md flex space-x-4">
+                    <Input
+                        content={"startDate"}
+                        type="date"
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder='startDate'
+                        label={'startDate'}
+                        value={educationData.startDate || ''}
+                    />
+                    <Input
+                        content={'endDate'}
+                        type={'date'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'graduationYear'}
+                        label={'graduationYear'}
+                        value={educationData.endDate }
+                    />
 
-
+                </div>
+                <textarea id="summary" onChange={(e) => handleInputChange(e)} name='summary' value={educationData.summary} rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your Summary..."></textarea>
             </form>
-            <div className='flex justify-end '>
+            <button onClick={() => handleChange(educationData)} className="bg-white w-full text-black py-2 px-4 rounded-md ">
+                Create
+            </button>
 
-                <button onClick={() => handleChange(educationData)} className="bg-blue-500 text-white py-2 px-4 rounded-md ">
-                    Create
-                </button>
-            </div>
-        </>
+        </div>
     );
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Experience } from '../../../types/types';
+import Input from '../../../partials/Input';
 interface ExperienceCom{
     handleChange: (data : Experience) => void;
   }
@@ -10,7 +11,8 @@ const ExperienceForm: React.FC<ExperienceCom> = ({handleChange}) => {
             company: '',
             position: '',
             startDate: '',
-            endDate: ''
+            endDate: '',
+            summary: '',
         }
     );
 
@@ -32,59 +34,59 @@ const ExperienceForm: React.FC<ExperienceCom> = ({handleChange}) => {
     
 
     return (
-        <>
-            <form className="max-w-md w-full m-auto rounded-md">
+        <div className='space-y-3'>
+            <form className=" rounded-md">
+            <h2>Add New Experience</h2>
+                <div className="mt-4 rounded-md flex space-x-4 ">
+                    <Input
+                        content={'company'}
+                        type={'text'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'company'}
+                        label={'company'}
+                        value={experienceData.company || ''}
+                    />
+                    <Input
+                        content={'position'}
+                        type={'text'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'position'}
+                        label={'position'}
+                        value={experienceData.position || ''}
+                    />
 
-                <div className="mb-4 p-2 bg-white rounded-md flex space-x-4">
-                    <label className="block mb-2">
-                    Company:
-                        <input
-                            type="text"
-                            name='company'
-                            value={experienceData.company}
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full text-black"
-                        />
-                    </label>
-                    <label className="block mb-2">
-                        Degree:
-                        <input
-                            type="text"
-                            name='position'
-                            value={experienceData.position}
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                    </label>
-                    <label className="block mb-2">
-                        Start Date:
-                        <input
-                            type="text"
-                            value={experienceData.startDate}
-                            name='startDate'
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                        <input
-                            type="text"
-                            value={experienceData.endDate}
-                            name='endDate'
-                            onChange={(e) => handleInputChange(e)}
-                            className="form-input mt-1 block w-full"
-                        />
-                    </label>
+                </div>
+                
+                    
+                <div className="mb-4 rounded-md flex space-x-4">
+                    <Input
+                        content={"Start year"}
+                        type="date"
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder='Start year'
+                        label={'Start year'}
+                        value={experienceData.startDate || ''}
+                    />
+                    <Input
+                        content={'End year'}
+                        type={'date'}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder={'End year'}
+                        label={'End year'}
+                        value={experienceData.endDate }
+                    />
 
                 </div>
 
+    
+                <textarea id="summary" name='summary' value={experienceData.summary} rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your Summary..."></textarea>
+
 
             </form>
-            <div className='flex justify-end '>
-
-                <button onClick={() => handleChange(experienceData)} className="bg-blue-500 text-white py-2 px-4 rounded-md ">
-                    Create
-                </button>
-            </div>
-        </>
+            <button onClick={() => handleChange(experienceData)} className="bg-white w-full text-black py-2 px-4 rounded-md ">
+                Create
+            </button>
+        </div>
     );
 };
 
