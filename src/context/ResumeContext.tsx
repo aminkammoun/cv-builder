@@ -1,6 +1,6 @@
 // ResumeContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Education, Experience, ResumeData } from '../types/types';
+import { Education, Experience, ResumeData,Certification, Profil } from '../types/types';
 
 
 
@@ -11,6 +11,9 @@ interface ResumeContextProps {
   updateResumeData: (newData: Partial<ResumeData>) => void;
   updateEducationData: (newData: Education) => void;
   updateExperienceData: (newData: Experience) => void;
+  updateCertificationData: (newData: Certification) => void;
+  updateProfilData: (newData: Profil) => void;
+
 }
 
 const ResumeContext = createContext<ResumeContextProps | undefined>(undefined);
@@ -43,6 +46,9 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
     education: [],
     experience: [],
     skills: [],
+    languages: [],
+    certifications: [],
+    profils: []
   }
   );
   
@@ -63,8 +69,23 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
         experience: [...prevData.experience, newData],
     }))
   }
+
+  const updateCertificationData = (newData:Certification) => {
+    setResumeData((prevData) => ({
+
+     ...prevData,
+     certifications: [...prevData.certifications, newData],
+    }))
+  }
+  const updateProfilData = (newData:Profil) => {
+    setResumeData((prevData) => ({
+
+     ...prevData,
+     profils: [...prevData.profils, newData],
+    }))
+  }
   return (
-    <ResumeContext.Provider value={{  resumeData, updateResumeData, updateEducationData,updateExperienceData }}>
+    <ResumeContext.Provider value={{  resumeData, updateResumeData, updateEducationData,updateExperienceData,updateCertificationData,updateProfilData }}>
       {children}
     </ResumeContext.Provider>
   );
