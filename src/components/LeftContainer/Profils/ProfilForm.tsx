@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Profil } from '../../../types/types';
 import Input from '../../../partials/Input';
 interface ProfilCom {
@@ -26,6 +26,9 @@ const ProfilForm: React.FC<ProfilCom> = ({ handleChange }) => {
 
         }))
     };
+    useEffect(() => {
+        console.log('Updated ProfilData:', profilData);
+    }, [profilData])
 
     return (
         <div className='space-y-3'>

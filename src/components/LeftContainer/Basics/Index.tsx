@@ -20,6 +20,9 @@ const Index: React.FC = () => {
     education: [],
     experience: [],
     skills: [],
+    profil: [],
+    certifications: [],
+    languages: []
   });
 
 

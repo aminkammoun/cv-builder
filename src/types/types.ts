@@ -11,7 +11,7 @@ export interface ResumeData {
   education?: Education[];
   experience?: Experience[];
   skills?: Skill[];
-  profils?: Profil[];
+  profil?: Profil[];
   languages?: Language[];
   certifications?: Certification[];
 }

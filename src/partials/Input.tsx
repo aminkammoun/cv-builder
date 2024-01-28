@@ -27,7 +27,7 @@ const Input:React.FC<GlobalInputProps> = ({ type, placeholder, content, label, v
                 autoComplete="given-name"
                 onChange={handleChange}
                 
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-slate-900"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-white   bg-black"
             />
         </div>
     );

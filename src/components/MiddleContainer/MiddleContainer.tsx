@@ -30,15 +30,13 @@ const MiddleContainer: React.FC = () => {
 
 
   return (
-    <TransformWrapper
-      
+    <TransformWrapper 
       centerOnInit
       maxScale={2}
       minScale={0.4}
       initialScale={0.8}
       ref={transformComponentRef}
       limitToBounds={false}
-
     >
       
           <TransformComponent 
