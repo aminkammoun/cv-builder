@@ -34,13 +34,13 @@ const ProfilForm: React.FC<ProfilCom> = ({ handleChange }) => {
         <div className='space-y-3'>
 
             <form className=" rounded-md">
-                <h2>Add New Profile </h2>
+                <h2 className='text-xl'>Add New Profile </h2>
                 <div className="mt-4 rounded-md flex space-x-4 ">
                     <Input
                         content={'networks'}
                         type={'text'}
                         onChange={(e) => handleInputChange(e)}
-                        placeholder={'networks'}
+                        placeholder={'LinkedIn'}
                         label={'networks'}
                         value={profilData.networks || ''}
                     />
@@ -48,7 +48,7 @@ const ProfilForm: React.FC<ProfilCom> = ({ handleChange }) => {
                         content={'username'}
                         type={'text'}
                         onChange={(e) => handleInputChange(e)}
-                        placeholder={'https://www.linkedin.com/certification'}
+                        placeholder={'Amine.kammoun'}
                         label={'username'}
                         value={profilData.username || ''}
                     />
@@ -59,7 +59,7 @@ const ProfilForm: React.FC<ProfilCom> = ({ handleChange }) => {
                         content={"website"}
                         type="string"
                         onChange={(e) => handleInputChange(e)}
-                        placeholder='Juanuary 2016'
+                        placeholder='https://www.linkedin.com/certification'
                         label={'website'}
                         value={profilData.website || ''}
                     />

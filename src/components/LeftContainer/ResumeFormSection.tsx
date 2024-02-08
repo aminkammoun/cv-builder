@@ -7,7 +7,7 @@ import Experience from './Experience/Index';
 import Certifications from "./Certifications/Index";
 import Languages from "./Languages/Index";
 import Profils from "./Profils/Index";
-import Technologies from "./Technologies/Index";
+import Volunteering from "./Volunteering/Index";
 import Projects from "./Projects/Index";
 const ResumeFormSection: React.FC = () => {
   
@@ -18,8 +18,7 @@ const ResumeFormSection: React.FC = () => {
     <Basics />
     <hr />
     <Profils />
-    <hr />
-    <Technologies />
+    
     <hr />
     <Education/>
     <hr />
@@ -29,7 +28,9 @@ const ResumeFormSection: React.FC = () => {
     <hr />
     <Certifications/>
     <hr />
-    <Languages />    
+    <Languages />
+    <hr />
+    <Volunteering />    
     </div>
   );
 };

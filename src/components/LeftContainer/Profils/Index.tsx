@@ -5,18 +5,15 @@ import AddHint from '../../../partials/AddHint';
 import { ShareIcon } from '@heroicons/react/24/outline';
 import ProfilForm from './ProfilForm';
 import { useResumeContext } from '../../../context/ResumeContext';
-import {  Profil } from '../../../types/types';
+import { Profil } from '../../../types/types';
+import ProfilCard from './ProfilCard';
 
 
 const Index: React.FC = () => {
     const [onClose, setOnClose] = useState(false)
-    const { updateProfilData } = useResumeContext();
+    const { updateProfilData, resumeData } = useResumeContext();
 
-    /*const handleCheckSyntax = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission, e.g., send data to the server or process it further
-        console.log('Form data submitted:', formData);
-    };*/
+  
     const handleAdd = (ff: string) => {
         console.log(ff);
 
@@ -27,7 +24,7 @@ const Index: React.FC = () => {
         updateProfilData(data);
         setOnClose(false);
     }
- 
+
     return (
         <div className="mb-4 ">
             <div className='flex items-center'>
@@ -38,6 +35,9 @@ const Index: React.FC = () => {
                 </label>
 
             </div>
+            {
+                resumeData.profil && <ProfilCard data={resumeData.profil} />
+            }
             <AddHint label="Profil" onAddClick={() => handleAdd('Profil')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>

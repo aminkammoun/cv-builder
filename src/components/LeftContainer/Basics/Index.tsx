@@ -22,7 +22,9 @@ const Index: React.FC = () => {
     skills: [],
     profil: [],
     certifications: [],
-    languages: []
+    languages: [],
+    volunteering: [],
+    projects: [],
   });
 
 

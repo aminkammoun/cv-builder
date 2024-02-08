@@ -7,8 +7,8 @@ const ProfilCard = ({ data }) => {
             <div key={index} className="mb-4 p-2 bg-black border border-dashed rounded-md shadow-md">
                 <div className='flex justify-between'>
                     <span className="">
-                        <h1 className="text-2xl ">{item.networks}</h1>
-                        <h3 >{item.username}</h3>
+                        <h1 className="text-2xl ">{item.Organization}</h1>
+                        <h3 >{item.Position}</h3>
                     </span>
 
 

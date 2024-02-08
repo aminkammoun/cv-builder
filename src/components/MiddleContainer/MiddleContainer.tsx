@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import Basics from './Basics/Index'
 import Education from './Education/Index'
 import Experience from './Experience/Index'
+import Projects from './projects/Index'
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef, } from 'react-zoom-pan-pinch';
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -55,6 +56,7 @@ const MiddleContainer: React.FC = () => {
                     <Basics />
                     <Education />
                     <Experience />
+                    <Projects />
                   </div>
                 </div>
               </motion.div>

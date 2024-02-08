@@ -14,6 +14,8 @@ export interface ResumeData {
   profil?: Profil[];
   languages?: Language[];
   certifications?: Certification[];
+  volunteering?: Volunteering[];
+  projects?: Projects[];
 }
 
 export interface Education {
@@ -55,4 +57,18 @@ export interface Certification{
   website: string;
   summary: string;
 
+}
+export interface Volunteering{
+  Organization: string;
+  Position: string;
+  date: string;
+  Location: string;
+  summary: string;
+}
+export interface Projects{
+  name: string;
+  Description: string;
+  date: string;
+  Location: string;
+  summary: string;
 }

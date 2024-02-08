@@ -1,6 +1,6 @@
 // ResumeContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Education, Experience, ResumeData, Certification, Profil } from '../types/types';
+import { Education, Experience, ResumeData, Certification, Profil, Language, Volunteering, Projects } from '../types/types';
 
 
 
@@ -13,6 +13,9 @@ interface ResumeContextProps {
   updateExperienceData: (newData: Experience) => void;
   updateCertificationData: (newData: Certification) => void;
   updateProfilData: (newData: Profil) => void;
+  updateLanguageData: (newData: Language) => void;
+  updateVolunteeringData: (newData: Volunteering) => void;
+  updateProjectsData: (newData: Projects) => void;
 
 }
 
@@ -49,6 +52,8 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
     skills: [],
     languages: [],
     certifications: [],
+    volunteering: [],
+    projects: [],
   }
   );
 
@@ -83,8 +88,26 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
       profil: [...prevData.profil, newData],
     }));
   }
+  const updateLanguageData = (newData: Language) => {
+    setResumeData((prevData) => ({
+      ...prevData,
+      languages: [...prevData.languages, newData],
+    }));
+  }
+  const updateVolunteeringData = (newData: Volunteering) => {
+    setResumeData((prevData) => ({
+      ...prevData,
+      volunteering: [...prevData.volunteering, newData],
+    }));
+  }
+  const updateProjectsData = (newData: Projects) => {
+    setResumeData((prevData) => ({
+      ...prevData,
+      projects: [...prevData.projects, newData],
+    }));
+  }
   return (
-    <ResumeContext.Provider value={{ resumeData, updateResumeData, updateEducationData, updateExperienceData, updateCertificationData, updateProfilData }}>
+    <ResumeContext.Provider value={{ resumeData, updateResumeData, updateEducationData, updateExperienceData, updateCertificationData, updateProfilData, updateLanguageData,updateVolunteeringData,updateProjectsData }}>
       {children}
     </ResumeContext.Provider>
   );

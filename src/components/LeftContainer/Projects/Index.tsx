@@ -3,30 +3,28 @@ import Modal from '../../../utils/Modal';
 //import { CheckBadgeIcon, CheckIcon } from '@heroicons/react/16/solid';
 import AddHint from '../../../partials/AddHint';
 import { BuildingOfficeIcon } from '@heroicons/react/24/outline';
+import { useResumeContext } from '../../../context/ResumeContext';
+import { Projects } from '../../../types/types';
+import ProjectsForm from './ProjectsForm';
+import ProjectsCard from './ProjectsCard';
 
 
 
 
 const Index: React.FC = () => {
     const [onClose, setOnClose] = useState(false)
-   /* const { updateExperienceData, resumeData } = useResumeContext();
- */
-    /*const handleCheckSyntax = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission, e.g., send data to the server or process it further
-        console.log('Form data submitted:', formData);
-    };*/
+   const { updateProjectsData, resumeData } = useResumeContext();
+
     const handleAdd = (ff: string) => {
         console.log(ff);
 
         setOnClose(true);
 
     }
-   /*  const handleChange = (data: Experience) => {
-        updateExperienceData(data);
+    const handleChange = (data: Projects) => {
+        updateProjectsData(data);
         setOnClose(false);
-
-    } */
+    }
     return (
         <div className="mb-4 ">
             <div className='flex items-center'>
@@ -37,12 +35,14 @@ const Index: React.FC = () => {
                 </label>
             </div>
             <div>
-               
+               {
+                resumeData&& <ProjectsCard data={resumeData.projects}/> 
+               }
             </div>
             <AddHint label="Projects" onAddClick={() => handleAdd('Projects')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>
-                <h1>Projects  Model</h1>
+            {onClose && <ProjectsForm handleChange={handleChange} />}
             </Modal>
 
 
