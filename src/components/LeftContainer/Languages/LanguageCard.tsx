@@ -6,12 +6,8 @@ const ProfilCard = ({ data }) => {
         return data.map((item, index) => (
             <div key={index} className="mb-4 p-2 bg-black border border-dashed rounded-md shadow-md">
                 <div className='flex justify-between'>
-                    <span className="">
                         <h1 className="text-2xl ">{item.name}</h1>
                         <h3 >{item.level}</h3>
-                    </span>
-
-
                 </div>
             </div>
         ));

@@ -4,7 +4,7 @@ import MediumDisplayData from './mediumDisplayData';
 const MediumGlobalDisplay = ({Bigtitle, data }) => {
     const renderItems = () => {
         return data.map((item, index) => (
-            <MediumDisplayData key={index} title={item.name} date={item.date} addon={item.Description}/>
+            <MediumDisplayData key={index} title={item.name} date={item.date} summary={item.summary} addon={item.Description} level={item.level} />
         ));
       };
     

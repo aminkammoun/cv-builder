@@ -3,6 +3,7 @@ import Basics from './Basics/Index'
 import Education from './Education/Index'
 import Experience from './Experience/Index'
 import Projects from './projects/Index'
+import Language from './Language/Index'
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef, } from 'react-zoom-pan-pinch';
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -54,6 +55,7 @@ const MiddleContainer: React.FC = () => {
                 <div className='w-full text-black' id='imgExample'>
                   <div className="basicStyle bg-white">
                     <Basics />
+                    <Language />
                     <Education />
                     <Experience />
                     <Projects />
