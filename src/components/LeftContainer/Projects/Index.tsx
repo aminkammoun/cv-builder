@@ -6,7 +6,8 @@ import { BuildingOfficeIcon } from '@heroicons/react/24/outline';
 import { useResumeContext } from '../../../context/ResumeContext';
 import { Projects } from '../../../types/types';
 import ProjectsForm from './ProjectsForm';
-import ProjectsCard from './ProjectsCard';
+//import ProjectsCard from './ProjectsCard';
+import Card from '../../../partials/Card';
 
 
 
@@ -36,7 +37,7 @@ const Index: React.FC = () => {
             </div>
             <div>
                {
-                resumeData&& <ProjectsCard data={resumeData.projects}/> 
+                resumeData&& <Card data={resumeData.projects}/> 
                }
             </div>
             <AddHint label="Projects" onAddClick={() => handleAdd('Projects')} />

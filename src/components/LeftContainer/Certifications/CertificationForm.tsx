@@ -11,7 +11,7 @@ const CertificationForm: React.FC<CertificationCom> = ({ handleChange }) => {
             name:'',
             issuer:'',
             website:'',
-            Date: '',
+            rangeDate: '',
             summary: '',
         }
     );
@@ -28,7 +28,7 @@ const CertificationForm: React.FC<CertificationCom> = ({ handleChange }) => {
         }))
     };
     useEffect(() => {
-        console.log('Updated EducationData:', certificationData);
+        console.log('Updated Certification:', certificationData);
     }, [certificationData])
 
 
@@ -64,7 +64,7 @@ const CertificationForm: React.FC<CertificationCom> = ({ handleChange }) => {
                         onChange={(e) => handleInputChange(e)}
                         placeholder='Juanuary 2016'
                         label={'Date'}
-                        value={certificationData.Date || ''}
+                        value={certificationData.rangeDate || ''}
                     />
                     <Input
                         content={'website'}

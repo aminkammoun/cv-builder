@@ -20,9 +20,9 @@ export interface ResumeData {
 
 export interface Education {
   institution: string;
+  location: string,
   degree: string;
-  endDate: string;
-  startDate: string;
+  rangeDate: string;
   summary: string;
 }
 
@@ -30,8 +30,7 @@ export interface Experience {
   company: string;
   position: string;
   location: string,
-  startDate: string;
-  endDate?: string; // Optional if still working
+  rangeDate: string;
   summary: string;
 }
 
@@ -53,10 +52,9 @@ export interface Language{
 export interface Certification{
   name: string;
   issuer: string;
-  Date: string;
+  rangeDate: string;
   website: string;
   summary: string;
-
 }
 export interface Volunteering{
   Organization: string;
@@ -68,7 +66,7 @@ export interface Volunteering{
 export interface Projects{
   name: string;
   Description: string;
-  date: string;
-  Location: string;
+  rangeDate: string;
+  location: string;
   summary: string;
 }

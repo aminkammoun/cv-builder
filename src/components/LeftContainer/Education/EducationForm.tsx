@@ -10,8 +10,8 @@ const EducationForm: React.FC<EducationCom> = ({ handleChange }) => {
         {
             institution: '',
             degree: '',
-            startDate:'',
-            endDate: '',
+            rangeDate:'',
+            location: '',
             summary: '',
         }
     );
@@ -57,22 +57,22 @@ const EducationForm: React.FC<EducationCom> = ({ handleChange }) => {
                     />
 
                 </div>
-                <div className="mb-4 rounded-md flex space-x-4 justify-between">
+                <div className="mb-4 rounded-md flex justify-between">
                     <Input
-                        content={"startDate"}
-                        type="date"
+                        content={"rangeDate"}
+                        type={'text'}
                         onChange={(e) => handleInputChange(e)}
-                        placeholder='startDate'
-                        label={'startDate'}
-                        value={educationData.startDate || ''}
+                        placeholder='March 2014 - March 2024'
+                        label={'Range date'}
+                        value={educationData.rangeDate || ''}
                     />
-                    <Input
-                        content={'endDate'}
-                        type={'date'}
-                        onChange={(e) => handleInputChange(e)}
-                        placeholder={'graduationYear'}
-                        label={'graduationYear'}
-                        value={educationData.endDate }
+                    <Input 
+                    content={'location'}
+                    type={'text'}
+                    onChange={(e) => handleInputChange(e)}
+                    placeholder={'location'}
+                    label={'location'}
+                    value={educationData.location || ''}
                     />
 
                 </div>

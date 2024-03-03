@@ -4,17 +4,12 @@ import MediumGlobalDisplay from '../../../partials/MediumGlobalDisplay';
 
 const Index: React.FC = () => {
     const { resumeData } = useResumeContext();
-
     return (
-
         <div >
             {
-                resumeData.education && <MediumGlobalDisplay Bigtitle={'Education'} data={resumeData.education} />
+                resumeData.certifications && <MediumGlobalDisplay Bigtitle={'Certification'} data={resumeData.certifications} />
             }
         </div>
-
-
-
     );
 };
 

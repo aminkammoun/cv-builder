@@ -11,8 +11,7 @@ const ExperienceForm: React.FC<ExperienceCom> = ({ handleChange }) => {
             company: '',
             position: '',
             location: '',
-            startDate: '',
-            endDate: '',
+            rangeDate: '',
             summary: '',
         }
     );
@@ -59,24 +58,23 @@ const ExperienceForm: React.FC<ExperienceCom> = ({ handleChange }) => {
                 </div>
 
 
-                <div className="mb-4 rounded-md flex space-x-4  justify-between">
+                <div className="mb-4 rounded-md flex justify-between">
                     <Input
-                        content={"Start year"}
-                        type="date"
+                        content={"rangeDate"}
+                        type="string"
                         onChange={(e) => handleInputChange(e)}
-                        placeholder='Start year'
-                        label={'Start year'}
-                        value={experienceData.startDate || ''}
+                        placeholder='March 2014- March 2024'
+                        label={'Range date'}
+                        value={experienceData.rangeDate || ''}
                     />
-                    <Input
-                        content={'End year'}
-                        type={'date'}
-                        onChange={(e) => handleInputChange(e)}
-                        placeholder={'End year'}
-                        label={'End year'}
-                        value={experienceData.endDate}
+                   <Input 
+                    content={'location'}
+                    type={'text'}
+                    onChange={(e) => handleInputChange(e)}
+                    placeholder={'location'}
+                    label={'location'}
+                    value={experienceData.location || ''}
                     />
-
                 </div>
 
 

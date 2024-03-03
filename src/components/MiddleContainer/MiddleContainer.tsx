@@ -6,6 +6,8 @@ import Projects from './projects/Index'
 import Language from './Language/Index'
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef, } from 'react-zoom-pan-pinch';
 import { AnimatePresence, motion } from "framer-motion";
+import Certification from './Certification'
+import Volunteering from './Volunteering'
 
 
 const MiddleContainer: React.FC = () => {
@@ -59,6 +61,8 @@ const MiddleContainer: React.FC = () => {
                     <Education />
                     <Experience />
                     <Projects />
+                    <Volunteering />
+                    <Certification/>
                   </div>
                 </div>
               </motion.div>

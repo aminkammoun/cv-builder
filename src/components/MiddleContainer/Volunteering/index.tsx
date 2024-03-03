@@ -9,7 +9,7 @@ const Index: React.FC = () => {
 
         <div >
             {
-                resumeData.education && <MediumGlobalDisplay Bigtitle={'Education'} data={resumeData.education} />
+                resumeData.volunteering && <MediumGlobalDisplay Bigtitle={'Volunteering'} data={resumeData.volunteering} />
             }
         </div>
 

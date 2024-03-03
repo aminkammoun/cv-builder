@@ -10,8 +10,8 @@ const ProjectsForm: React.FC<ProjectsCom> = ({ handleChange }) => {
         {
             name: '',
             Description: '',
-            date: '',
-            Location: '',
+            rangeDate: '',
+            location: '',
             summary: '',
         }
     );
@@ -57,20 +57,20 @@ const ProjectsForm: React.FC<ProjectsCom> = ({ handleChange }) => {
                 </div>
                 <div className="flex justify-between">
                     <Input
-                        content={"date"}
+                        content={"rangeDate"}
                         type="text"
                         onChange={(e) => handleInputChange(e)}
-                        placeholder='range of date '
-                        label={'date'}
-                        value={projectsData.date || ''}
+                        placeholder='fev 2015 - fev 2025'
+                        label={'range date'}
+                        value={projectsData.rangeDate || ''}
                     />
                     <Input
-                        content={'Location'}
+                        content={'location'}
                         type={'text'}
                         onChange={(e) => handleInputChange(e)}
-                        placeholder={'Location'}
-                        label={'Location'}
-                        value={projectsData.Location}
+                        placeholder={'location'}
+                        label={'location'}
+                        value={projectsData.location}
                     />
                 </div>
 

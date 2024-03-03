@@ -1,33 +1,40 @@
 import React from 'react'
 
 interface GlobalMediumProps {
-    title: string;
-    date?: string;
-    addon?: string;
-    level?: string;
+    tR: string;
+    tL?: string;
+    bR?: string;
+    bL?: string;
     summary?: string;
 
 }
 
-const mediumDisplayData: React.FC<GlobalMediumProps> = ({ title, date, addon, level, summary }) => {
+const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summary }) => {
     return (
         <div className="flex-1 resume-item  mt-2">
             <div className="flex justify-between">
-                <div>
-                    <span className='ml-1 flex items-center space-x-4 font-bold'>{title} </span>
-                    <span className='ml-1 flex items-center space-x-4'>{addon} </span>
 
-
-                </div>
                 {
-                    addon && <span className='ml-1 flex items-center space-x-4'>{date} </span>
+                    tR && <span className='ml-1 flex items-center space-x-4 font-bold'>{tR} </span>
+                }
+
+                {
+                    tL && <span className='ml-1 flex items-center space-x-4'>{tL}</span>
+                }
+
+
+            </div>
+            <div className="flex justify-between">
+
+                {
+                    bL && <span className='ml-1 flex items-center space-x-4'>{bL}</span>
                 }
                 {
-                    level && <span className='ml-1 flex items-center space-x-4'>{level} </span>
+                    bR && <span className='ml-1 flex items-center space-x-4'>{bR}</span>
                 }
             </div>
             {
-                summary && <span className='ml-1 flex items-center space-x-4'>{summary} </span>
+                summary && <p className="text-gray-600">{summary}</p>
             }
         </div>
     )
