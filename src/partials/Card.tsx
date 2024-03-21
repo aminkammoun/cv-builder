@@ -14,6 +14,9 @@ const Card = ({ data }) => {
               item.institution && <h2 className="text-lg  font-bold">{item.institution}</h2>
             }
             {
+              item.Organization && <h2 className="text-lg  font-bold">{item.Organization}</h2>
+            }
+            {
               item.company && <h2 className="text-lg  font-bold">{item.company}</h2>
             }
             {
@@ -33,6 +36,9 @@ const Card = ({ data }) => {
 
             {
               item.rangeDate && <p className="text-white">{`${item.rangeDate}`}</p>
+            }
+            {
+              item.date && <p className="text-white">{`${item.date}`}</p>
             }
             {
               item.location && <p className="text-white">{`${item.location}`}</p>

@@ -25,13 +25,14 @@ const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summar
 
             </div>
             <div className="flex justify-between">
-
-                {
-                    bL && <span className='ml-1 flex items-center space-x-4'>{bL}</span>
-                }
-                {
-                    bR && <span className='ml-1 flex items-center space-x-4'>{bR}</span>
-                }
+                <span>
+                    {
+                        bL && <span className='ml-1 flex items-center space-x-4'>{bL}</span>
+                    }</span>
+                <span>
+                    {
+                        bR && <span className='ml-1 flex items-center space-x-4'>{bR}</span>
+                    }</span>
             </div>
             {
                 summary && <p className="text-gray-600">{summary}</p>

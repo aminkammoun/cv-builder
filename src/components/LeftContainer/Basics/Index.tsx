@@ -6,26 +6,7 @@ import Input from '../../../partials/Input';
 
 const Index: React.FC = () => {
   const { updateResumeData } = useResumeContext();
-  const [resumeData, setResumeData] = useState<ResumeData>({
-    basics: {
-      firstName: '',
-      lastName: '',
-      phone: '',
-      website: '',
-      email: '',
-      location: '',
-      headline: ''
-
-    },
-    education: [],
-    experience: [],
-    skills: [],
-    profil: [],
-    certifications: [],
-    languages: [],
-    volunteering: [],
-    projects: [],
-  });
+  const [resumeData, setResumeData] = useState<ResumeData>(JSON.parse(localStorage.getItem("resumeData")));
 
 
 

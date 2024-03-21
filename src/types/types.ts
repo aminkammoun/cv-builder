@@ -58,9 +58,9 @@ export interface Certification{
 }
 export interface Volunteering{
   Organization: string;
-  Position: string;
+  position: string;
   date: string;
-  Location: string;
+  location: string;
   summary: string;
 }
 export interface Projects{

@@ -9,9 +9,9 @@ const VolunteeringForm: React.FC<VolunteeringCom> = ({ handleChange }) => {
     const [volunteeringData, setVolunteeringData] = useState<Volunteering>(
         {
             Organization: '',
-            Position: '',
+            position: '',
             date: '',
-            Location: '',
+            location: '',
             summary: '',
         }
     );
@@ -46,12 +46,12 @@ const VolunteeringForm: React.FC<VolunteeringCom> = ({ handleChange }) => {
                         value={volunteeringData.Organization || ''}
                     />
                     <Input
-                        content={'Position'}
+                        content={'position'}
                         type={'text'}
                         onChange={(e) => handleInputChange(e)}
                         placeholder={'Position'}
                         label={'Position'}
-                        value={volunteeringData.Position || ''}
+                        value={volunteeringData.position || ''}
                     />
 
                 </div>
@@ -65,12 +65,12 @@ const VolunteeringForm: React.FC<VolunteeringCom> = ({ handleChange }) => {
                         value={volunteeringData.date || ''}
                     />
                     <Input
-                        content={'Location'}
+                        content={'location'}
                         type={'text'}
                         onChange={(e) => handleInputChange(e)}
                         placeholder={'Location'}
                         label={'Location'}
-                        value={volunteeringData.Location}
+                        value={volunteeringData.location}
                     />
                 </div>
 

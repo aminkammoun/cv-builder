@@ -6,7 +6,8 @@ import { PuzzlePieceIcon } from '@heroicons/react/24/outline';
 import { Volunteering } from '../../../types/types';
 import VolunteeringForm from './VolunteeringForm';
 import { useResumeContext } from '../../../context/ResumeContext';
-import VolunteeringCard from './VolunteeringCard';
+
+import Card from '../../../partials/Card';
 
 
 
@@ -38,7 +39,7 @@ const Index: React.FC = () => {
             </div>
             <div>
                {
-                resumeData&& <VolunteeringCard data={resumeData.volunteering} /> 
+                resumeData&& <Card data={resumeData.volunteering} /> 
                }
             </div>
             <AddHint label="Technologies" onAddClick={() => handleAdd('Technologies')} />

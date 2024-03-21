@@ -4,7 +4,7 @@ import MediumDisplayData from './mediumDisplayData';
 const MediumGlobalDisplay = ({ Bigtitle, data }) => {
   const renderItems = () => {
     return data.map((item, index) => (
-      <MediumDisplayData key={index} tR={item.name || item.company || item.institution || item.organization} tL={item.rangeDate} bL={item.Description || item.position || item.issuer} summary={item.summary} bR={item.location || item.website} />
+      <MediumDisplayData key={index} tR={item.name || item.company || item.institution || item.Organization} tL={item.rangeDate || item.level || item.date} bL={item.Description || item.position || item.issuer|| item.degree} summary={item.summary} bR={item.location || item.website} />
     ));
   };
 
