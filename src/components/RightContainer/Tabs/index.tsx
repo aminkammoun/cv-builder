@@ -6,34 +6,34 @@ import {
     TabPanel,
   } from "@material-tailwind/react";
   import Settings from '../Settings'
+  import AiAssitance from '../AiAssitance'
 import React from "react";
    
   export function TabsDefault() {
     const data = [
       {
-        label: "HTML",
+        label: "Ai Assistance",
         value: "html",
-        desc: <Settings /> ,
+        desc:<AiAssitance/> ,
       },
       {
         label: "Settings",
         value: "Settings",
-        desc: `Because it's about motivating the doers. Because I'm here
-        to follow my dreams and inspire other people to follow their dreams, too.`,
+        desc:  <Settings />,
       }
     ];
     const [activeTab, setActiveTab] = React.useState("html");
     return (
-        <Tabs value={activeTab}>
+        <Tabs value={activeTab} >
         <TabsHeader
           className="rounded-none bg-gray-900 p-0 "
           indicatorProps={{
             className:
-              "bg-transparent border-b-2 border-gray-500 shadow-none rounded-none ",
+              "bg-transparent border-b-2 border-gray-500 shadow-none rounded-none text-xs",
           }}
-        >
+        > 
           {data.map(({ label, value }) => (
-            <Tab key={value} value={value} children={""} placeholder={undefined} >
+            <Tab key={value} value={value} children={""} placeholder={undefined} className="text-xl" >
               {label}
             </Tab>
           ))}

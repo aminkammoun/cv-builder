@@ -16,6 +16,7 @@ export interface ResumeData {
   certifications?: Certification[];
   volunteering?: Volunteering[];
   projects?: Projects[];
+  Style?: Style[];
 }
 
 export interface Education {
@@ -69,4 +70,8 @@ export interface Projects{
   rangeDate: string;
   location: string;
   summary: string;
+}
+export interface Style{
+  padding:number;
+  color: string;
 }

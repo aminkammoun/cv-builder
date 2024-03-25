@@ -21,7 +21,7 @@ const HorizontalThreeSectionComponent: React.FC = () => {
       </section>
 
       {/* Third Section */}
-      <section className="flex-1/5 p-8 max-w-md">
+      <section className="flex-1/5  max-w-md">
         <RightContainer/>
       </section>
     </div>

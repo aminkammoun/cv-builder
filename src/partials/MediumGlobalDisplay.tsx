@@ -9,7 +9,7 @@ const MediumGlobalDisplay = ({ Bigtitle, data }) => {
   };
 
   return (
-    <div className='p-2'>
+    <div className={`p-${5}`}>  
       {
         data.length > 0 && <div>
           <h1 className='text-2xl bold'>{Bigtitle}</h1>
