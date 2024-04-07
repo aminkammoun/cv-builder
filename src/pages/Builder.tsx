@@ -10,19 +10,19 @@ const HorizontalThreeSectionComponent: React.FC = () => {
     <div className="flex h-screen bg-black ">
       {/* First Section */}
       <section className="flex-1/5 p-4 max-w-md overflow-y-auto">
-  
-        <ResumeFormSection/>
+
+        <ResumeFormSection />
       </section>
 
       {/* Second Section */}
       <section className="flex-1">
-        
+
         <MiddleContainer />
       </section>
 
       {/* Third Section */}
-      <section className="flex-1/5  max-w-md">
-        <RightContainer/>
+      <section className="flex-1/5 w-full max-w-md overflow-y-auto">
+        <RightContainer />
       </section>
     </div>
   );

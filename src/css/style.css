@@ -23,3 +23,10 @@
 [x-cloak=""] {
     display: none;
 }
+.btn{
+    padding: 10px;
+    width: 100%;
+}
+.tab-btn-active{
+    border-bottom: solid #c3c3c3c3;
+}

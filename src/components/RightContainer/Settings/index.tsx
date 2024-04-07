@@ -1,21 +1,18 @@
 import React from 'react'
-import { Input } from "@material-tailwind/react";
-export const Index = () => {
-  /*const [padding, setPadding] = useState(2); // Initial padding value is 2
-  const handleChange = (e) => {
-    setPadding(parseFloat(e.target.value));
-  };
-  useEffect(() => {
-    console.log('Updated padding:', padding);
-  }, [padding])*/
+import  SettingForm  from './SettingForm'
+const Index = () => {
   return (
-    <div>
+    <>
       
-      <div className="w-72">
-      <Input label="Username" crossOrigin={undefined} />
-    </div>
-    </div>
-  );
+        <div className="space-y-12">
+          <div className="border-b border-gray-900/10 pb-12">
+            <h1 className="font-bold leading-7">Settings</h1>
+            <SettingForm />
+          </div>
+        </div>
+   
+    </>
+  )
 }
 
 export default Index
