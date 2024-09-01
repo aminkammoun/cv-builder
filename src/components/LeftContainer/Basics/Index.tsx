@@ -6,7 +6,7 @@ import Input from '../../../partials/Input';
 
 const Index: React.FC = () => {
   const { updateResumeData } = useResumeContext();
-  const [resumeData, setResumeData] = useState<ResumeData>(JSON.parse(localStorage.getItem("resumeData"))|| {
+  const [resumeData, setResumeData] = useState<ResumeData>(JSON.parse(localStorage.getItem("userProfile")) || {
     basics: {
       firstName: '',
       lastName: '',
@@ -25,7 +25,7 @@ const Index: React.FC = () => {
     languages: [],
     volunteering: [],
     projects: [],
-    Style:[]
+    Style: []
   });
 
 
@@ -55,33 +55,33 @@ const Index: React.FC = () => {
       <div className='flex justify-between items-center space-x-4'>
         <div>
 
-          <Input 
-          placeholder={'first name'} 
-          label={'First Name'} 
-          type={'text'} 
-          content={'firstName'} 
-          value={resumeData.basics.firstName || ''}
-          onChange={handleChange} />
+          <Input
+            placeholder={'first name'}
+            label={'First Name'}
+            type={'text'}
+            content={'firstName'}
+            value={resumeData.basics.firstName || ''}
+            onChange={handleChange} />
         </div>
         <div>
 
-          <Input 
-          placeholder={'last name'} 
-          label={'Last Name'} 
-          type={'text'} 
-          content={'lastName'} 
-          value={resumeData.basics.lastName || ''}
-          onChange={handleChange} />
-          
-          
+          <Input
+            placeholder={'last name'}
+            label={'Last Name'}
+            type={'text'}
+            content={'lastName'}
+            value={resumeData.basics.lastName || ''}
+            onChange={handleChange} />
+
+
         </div>
       </div>
       <div>
-      <Input 
-          placeholder={'headline'} 
-          label={'headline'} 
-          type={'text'} 
-          content={'headline'} 
+        <Input
+          placeholder={'headline'}
+          label={'headline'}
+          type={'text'}
+          content={'headline'}
           value={resumeData.basics.headline || ''}
           onChange={handleChange} />
 
@@ -89,44 +89,44 @@ const Index: React.FC = () => {
       <div className="mb-2 mt-2 flex justify-between items-center space-x-4">
 
         <div className='space-y-2'>
-        <Input 
-          placeholder={'email'} 
-          label={'email'} 
-          type={'text'} 
-          content={'email'} 
-          value={resumeData.basics.email || ''}
-          onChange={handleChange} />
-           </div>
+          <Input
+            placeholder={'email'}
+            label={'email'}
+            type={'text'}
+            content={'email'}
+            value={resumeData.basics.email || ''}
+            onChange={handleChange} />
+        </div>
         <div className='space-y-2'>
-        <Input 
-          placeholder={'website'} 
-          label={'website'} 
-          type={'link'} 
-          content={'website'}
-          value={resumeData.basics.website || ''}
-          onChange={handleChange} />
-         
-          </div>
+          <Input
+            placeholder={'website'}
+            label={'website'}
+            type={'link'}
+            content={'website'}
+            value={resumeData.basics.website || ''}
+            onChange={handleChange} />
+
+        </div>
       </div>
 
       <div className="mb-2 flex justify-between items-center space-x-4">
         <div className='space-y-2'>
-        <Input 
-          placeholder={'phone'} 
-          label={'phone'} 
-          type={'number'} 
-          content={'phone'}
-          value={resumeData.basics.phone || ''}
-          onChange={handleChange} />
+          <Input
+            placeholder={'phone'}
+            label={'phone'}
+            type={'number'}
+            content={'phone'}
+            value={resumeData.basics.phone || ''}
+            onChange={handleChange} />
         </div>
         <div className='space-y-2'>
-        <Input 
-          placeholder={'location'} 
-          label={'location'} 
-          type={'text'} 
-          content={'location'}
-          value={resumeData.basics.location || ''}
-          onChange={handleChange} />
+          <Input
+            placeholder={'location'}
+            label={'location'}
+            type={'text'}
+            content={'location'}
+            value={resumeData.basics.location || ''}
+            onChange={handleChange} />
         </div>
 
       </div>

@@ -8,9 +8,12 @@ import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef, } from 'rea
 import { AnimatePresence, motion } from "framer-motion";
 import Certification from './Certification'
 import Volunteering from './Volunteering'
+import { useResumeContext } from '../../context/ResumeContext'
+//import { ResumeProvider, useResumeContext } from '../../context/ResumeContext'
 
 
 const MiddleContainer: React.FC = () => {
+  const { resumeData } = useResumeContext();
   const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -31,50 +34,60 @@ const MiddleContainer: React.FC = () => {
       window.removeEventListener("message", handleMessage);
     };
   }, [transformComponentRef]);
+  const endFnc = () => {
+    console.log(resumeData)
+    console.log('-------------------')
+    localStorage.setItem('userProfile', JSON.stringify(resumeData));
 
+  }
 
   return (
-    <TransformWrapper 
-      centerOnInit
-      maxScale={2}
-      minScale={0.4}
-      initialScale={0.8}
-      ref={transformComponentRef}
-      limitToBounds={false}
-    >
-      
-          <TransformComponent 
-            contentClass="grid items-start justify-center space-x-12 pointer-events-none" >
-            <AnimatePresence>
+    <>
 
-              <motion.div
-                layout
-                key={1}
-                initial={{ opacity: 0, x: -200, y: 0 }}
-                animate={{ opacity: 1, x: 0, transition: { delay: 1 * 0.3 } }}
-                exit={{ opacity: 0, x: -200 }}
-              >
-                <div className='w-full text-black' id='imgExample'>
-                  <div className="basicStyle bg-white">
-                    <Basics />
-                    <Language />
-                    <Education />
-                    <Experience />
-                    <Projects />
-                    <Volunteering />
-                    <Certification/>
-                  </div>
+      <TransformWrapper
+        centerOnInit
+        maxScale={2}
+        minScale={0.4}
+        initialScale={0.8}
+        ref={transformComponentRef}
+        limitToBounds={false}
+      >
+
+        <button className='bg-white text-black' onClick={() => endFnc()}>End this to localstora</button>
+        <TransformComponent
+          contentClass="grid items-start justify-center space-x-12 pointer-events-none" >
+          <AnimatePresence>
+
+            <motion.div
+              layout
+              key={1}
+              initial={{ opacity: 0, x: -200, y: 0 }}
+              animate={{ opacity: 1, x: 0, transition: { delay: 1 * 0.3 } }}
+              exit={{ opacity: 0, x: -200 }}
+            >
+              <div className='w-full text-black' id='imgExample'>
+                <div className="basicStyle bg-white">
+                  <Basics />
+                  <Language />
+                  <Education />
+                  <Experience />
+                  <Projects />
+                  <Volunteering />
+                  <Certification />
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
 
-          </TransformComponent>
-     
-    
+        </TransformComponent>
 
 
-    </TransformWrapper>
+
+
+      </TransformWrapper>
+    </>
+
   );
 };
 

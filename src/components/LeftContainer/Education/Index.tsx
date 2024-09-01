@@ -18,6 +18,8 @@ const Index: React.FC = () => {
 
     }
     const handleChange = (data: Education) => {
+        
+        console.log('hani khdemet')
         updateEducationData(data);
         setOnClose(false);
 
@@ -33,13 +35,13 @@ const Index: React.FC = () => {
             </div>
             <div>
                 {
-                    resumeData.education && <Card data={resumeData.education}/> 
+                    resumeData.education && <Card data={resumeData.education} />
                 }
             </div>
             <AddHint label="education" onAddClick={() => handleAdd('education')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>
-                {onClose && <EducationForm handleChange={handleChange} />} 
+                {onClose && <EducationForm handleChange={handleChange} />}
             </Modal>
 
 

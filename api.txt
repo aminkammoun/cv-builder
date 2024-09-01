@@ -1,3 +1,7 @@
 const apiKey = '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';
 const myApi='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'
 const openaiEndpoint = 'https://api.openai.com/v1/engines/davinci/completions';
+
+pdf download 
+forms check 
+openai integration

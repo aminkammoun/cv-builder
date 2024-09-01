@@ -7,11 +7,12 @@ import CertificationForm from './CertificationForm';
 import { Certification } from '../../../types/types';
 import { useResumeContext } from '../../../context/ResumeContext';
 import Card from '../../../partials/Card';
+import validateModalInputs from '../../../global/globalFunctions';
 
 
 const Index: React.FC = () => {
     const [onClose, setOnClose] = useState(false)
-    const { updateCertificationData,resumeData} = useResumeContext();
+    const { updateCertificationData, resumeData } = useResumeContext();
 
 
     /*const handleCheckSyntax = (e: React.FormEvent) => {
@@ -27,8 +28,12 @@ const Index: React.FC = () => {
     }
 
     const handleChange = (data: Certification) => {
-        updateCertificationData(data);
-        setOnClose(false);
+        console.log('Certification updated:', data.issuer);
+        if(validateModalInputs(data.issuer, data.name)){
+
+            updateCertificationData(data);
+            setOnClose(false);
+        }
 
     }
     return (
@@ -47,8 +52,8 @@ const Index: React.FC = () => {
             </div>
             <AddHint label="education" onAddClick={() => handleAdd('education')} />
 
-            <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>
-               <CertificationForm handleChange={handleChange} />
+            <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(true)}>
+                <CertificationForm handleChange={handleChange} />
             </Modal>
 
 

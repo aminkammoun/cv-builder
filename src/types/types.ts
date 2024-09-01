@@ -53,9 +53,9 @@ export interface Language{
 export interface Certification{
   name: string;
   issuer: string;
-  rangeDate: string;
-  website: string;
-  summary: string;
+  rangeDate?: string;
+  website?: string;
+  summary?: string;
 }
 export interface Volunteering{
   Organization: string;

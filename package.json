@@ -17,12 +17,14 @@
     "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.21.1",
     "react-transition-group": "^4.4.5",
     "react-zoom-pan-pinch": "^3.3.0",
     "simple-icons": "^11.2.0"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.43",
