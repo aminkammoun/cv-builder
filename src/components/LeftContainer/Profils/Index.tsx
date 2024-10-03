@@ -13,7 +13,7 @@ const Index: React.FC = () => {
     const [onClose, setOnClose] = useState(false)
     const { updateProfilData, resumeData } = useResumeContext();
 
-  
+
     const handleAdd = (ff: string) => {
         console.log(ff);
 
@@ -36,8 +36,9 @@ const Index: React.FC = () => {
 
             </div>
             {
-                resumeData.profil && <ProfilCard data={resumeData.profil} />
-            }
+                resumeData.profil && <div>
+                    <ProfilCard data={resumeData.profil} />
+                </div>}
             <AddHint label="Profil" onAddClick={() => handleAdd('Profil')} />
 
             <Modal id="modal" ariaLabel="modal-headline" show={onClose} handleClose={() => setOnClose(false)}>

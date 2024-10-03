@@ -3,34 +3,34 @@ import React from 'react';
 const Card = ({ data }) => {
   const renderItems = () => {
     return data.map((item, index) => (
-      <div key={index} className="mb-4 p-2 bg-gray-800 border-l-4 rounded-md shadow-md">
-        <div className='flex justify-between'>
+      <div key={index} className="p-1 max-w-sm bg-bg-100 border-bg-200 border border-l-4 hover:bg-bg-200 shadow ">
+        <div className=' flex justify-between'>
 
           <span className="">
             {
-              item.name && <h2 className="text-lg  font-bold">{item.name}</h2>
+              item.name && <h2 className="text-lg font-bold ">{item.name}</h2>
             }
             {
-              item.institution && <h2 className="text-lg  font-bold">{item.institution}</h2>
+              item.institution && <h2 className="text-lg font-bold">{item.institution}</h2>
             }
             {
-              item.Organization && <h2 className="text-lg  font-bold">{item.Organization}</h2>
+              item.Organization && <h2 className="text-md">{item.Organization}</h2>
             }
             {
-              item.company && <h2 className="text-lg  font-bold">{item.company}</h2>
+              item.company && <h2 className="text-md">{item.company}</h2>
             }
             {
               item.position && <p className="text-white ">{item.position}</p>
             }
             {
-              item.Description && <p className="text-white ">{item.Description}</p>
+              item.Description && <p className="text-white break-words">{item.Description}</p>
             }
 
           </span>
 
 
 
-          <span>
+          {/* <span>
 
 
 
@@ -43,28 +43,29 @@ const Card = ({ data }) => {
             {
               item.location && <p className="text-white">{`${item.location}`}</p>
             }
-          </span>
+          </span> */}
 
         </div>
-        <div className='flex justify-between'>
+        <div className=' p-1 flex justify-between'>
           {
             item.degree && <p className="text-white mb-1">{item.degree}</p>
           }
 
           {
-            item.issuer && <h2 className="text-lg  font-bold">{item.issuer}</h2>
+            item.issuer && <h2 className="text-md">{item.issuer}</h2>
           }
         </div>
 
-        <p> {item.summary}</p>
+        {/* <p className='break-words'> {item.summary}</p> */}
       </div>
     ));
   };
 
   return (
-    <div className="max-w-md mx-auto p-1">
+    <div className="max-w-sm shadow ">
 
       {renderItems()}
+
     </div>
   );
 };

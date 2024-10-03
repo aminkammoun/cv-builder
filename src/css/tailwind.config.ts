@@ -2,14 +2,20 @@
 
 
 export default {
- 
+
   content: [
     './index.html',
     './src/**/*.{js,jsx,ts,tsx}',
   ],
-  theme : {
+  theme: {
     extend: {
       colors: {
+        bg: {
+
+          100: '#101012',
+          200: '#1C1C1E',
+          300:'#0D0D10'
+        },
         gray: {
           100: '#FBFBFB',
           200: '#EAEAEA',

@@ -41,8 +41,12 @@ const Index: React.FC = () => {
             </div>
             <div>
                 {
-                    resumeData.experience && <Card data={resumeData.experience} />
+                    resumeData.experience && <div>
+                        
+                        <Card data={resumeData.experience} />
+                    </div>
                 }
+
             </div>
             <AddHint label="experience" onAddClick={() => handleAdd('experience')} />
 

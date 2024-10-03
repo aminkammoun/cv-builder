@@ -18,7 +18,7 @@ const Index: React.FC = () => {
 
     }
     const handleChange = (data: Education) => {
-        
+
         console.log('hani khdemet')
         updateEducationData(data);
         setOnClose(false);
@@ -35,8 +35,12 @@ const Index: React.FC = () => {
             </div>
             <div>
                 {
-                    resumeData.education && <Card data={resumeData.education} />
+                    resumeData.education && <div>
+                      
+                        <Card data={resumeData.education} />
+                    </div>
                 }
+
             </div>
             <AddHint label="education" onAddClick={() => handleAdd('education')} />
 

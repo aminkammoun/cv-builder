@@ -4,12 +4,13 @@ import React from 'react';
 const ProfilCard = ({ data }) => {
     const renderItems = () => {
         return data.map((item, index) => (
-            <div key={index} className="mb-4 p-2 bg-black border border-dashed rounded-md shadow-md">
-                <div className='flex justify-between'>
-                    <span className="">
-                        <h1 className="text-2xl ">{item.networks}</h1>
-                        <h3 >{item.username}</h3>
-                    </span>
+            <div key={index} className="p-1 max-w-sm bg-bg-100 border-bg-200 border border-l-4 hover:bg-bg-200 shadow ">
+                <div className='gap-1 flex'>
+
+
+                    <img height="15" width="15" src={"https://cdn.simpleicons.org/" + item.networks + "/white"} />
+                    <h3 >{item.username}</h3>
+
 
 
                 </div>
@@ -18,7 +19,7 @@ const ProfilCard = ({ data }) => {
     };
 
     return (
-        <div className="max-w-md mx-auto p-1">
+        <div className="max-w-md mx-auto p-1 shadow">
 
             {renderItems()}
         </div>

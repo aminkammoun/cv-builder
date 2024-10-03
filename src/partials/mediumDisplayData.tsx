@@ -1,15 +1,17 @@
 import React from 'react'
 
+
 interface GlobalMediumProps {
-    tR: string;
+    tR?: string;
     tL?: string;
     bR?: string;
     bL?: string;
     summary?: string;
-
+    isPdf?: boolean;
 }
 
-const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summary }) => {
+const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summary}) => {
+ 
     return (
         <div className="flex-1 resume-item  mt-2">
             <div className="flex justify-between">
@@ -35,7 +37,7 @@ const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summar
                     }</span>
             </div>
             {
-                summary && <p className="text-gray-600">{summary}</p>
+                summary && <p className="text-gray-600 break-words">{summary}</p>
             }
         </div>
     )

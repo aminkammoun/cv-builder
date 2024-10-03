@@ -1,16 +1,13 @@
 import React, { useEffect, useRef } from 'react'
-import Basics from './Basics/Index'
-import Education from './Education/Index'
-import Experience from './Experience/Index'
-import Projects from './projects/Index'
-import Language from './Language/Index'
+
 import { TransformComponent, TransformWrapper, ReactZoomPanPinchRef, } from 'react-zoom-pan-pinch';
 import { AnimatePresence, motion } from "framer-motion";
-import Certification from './Certification'
-import Volunteering from './Volunteering'
 import { useResumeContext } from '../../context/ResumeContext'
+//import TemplateOne from '../templates/template-one/TemplateOne';
+import TemplateOne from '../templates/template-one/TemplateOne';
 //import { ResumeProvider, useResumeContext } from '../../context/ResumeContext'
 
+// Define styles
 
 const MiddleContainer: React.FC = () => {
   const { resumeData } = useResumeContext();
@@ -52,7 +49,6 @@ const MiddleContainer: React.FC = () => {
         ref={transformComponentRef}
         limitToBounds={false}
       >
-
         <button className='bg-white text-black' onClick={() => endFnc()}>End this to localstora</button>
         <TransformComponent
           contentClass="grid items-start justify-center space-x-12 pointer-events-none" >
@@ -65,17 +61,10 @@ const MiddleContainer: React.FC = () => {
               animate={{ opacity: 1, x: 0, transition: { delay: 1 * 0.3 } }}
               exit={{ opacity: 0, x: -200 }}
             >
-              <div className='w-full text-black' id='imgExample'>
-                <div className="basicStyle bg-white">
-                  <Basics />
-                  <Language />
-                  <Education />
-                  <Experience />
-                  <Projects />
-                  <Volunteering />
-                  <Certification />
+                <div className='w-full text-black' id='imgExample'>
+                  <TemplateOne />
                 </div>
-              </div>
+              
             </motion.div>
           </AnimatePresence>
 

@@ -40,7 +40,7 @@ const Input: React.FC<GlobalInputProps> = ({ type, placeholder, content, label,v
                 autoComplete="given-name"
                 onChange={handleChange}
                 required={required}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-white   bg-black"
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-black-500 text-white   bg-bg-300"
 
             />
             {error && <p style={{ color: 'red' }}>{error.message}</p>}  {/* Display error message */}
