@@ -6,10 +6,11 @@ import EducationForm from './EducationForm';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import { Education } from '../../../types/types';
 import { useResumeContext } from '../../../context/ResumeContext';
-import Card from '../../../partials/Card';
+// import Card from '../../../partials/Card';
+import DraggableList from '../../../partials/DraggableList';
 const Index: React.FC = () => {
     const [onClose, setOnClose] = useState(false)
-    const { updateEducationData, resumeData } = useResumeContext();
+    const { updateEducationData, updateEducationDataDrag, resumeData } = useResumeContext();
 
     const handleAdd = (ff: string) => {
         console.log(ff);
@@ -24,6 +25,13 @@ const Index: React.FC = () => {
         setOnClose(false);
 
     }
+    const handlesOnDragEnd = (data: Education[]) => {
+        console.log('ml data')
+        console.log(data)
+        resumeData.education.splice(0, resumeData.education.length, ...data)
+        console.log(resumeData.education)
+        updateEducationDataDrag(data)
+    }
     return (
         <div className="mb-4 ">
             <div className='flex items-center'>
@@ -36,8 +44,8 @@ const Index: React.FC = () => {
             <div>
                 {
                     resumeData.education && <div>
-                      
-                        <Card data={resumeData.education} />
+                        <DraggableList handlesOnDragEnd={handlesOnDragEnd} data={resumeData.education}></DraggableList>
+
                     </div>
                 }
 

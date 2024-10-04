@@ -10,6 +10,7 @@ interface ResumeContextProps {
 
   updateResumeData: (newData: Partial<ResumeData>) => void;
   updateEducationData: (newData: Education) => void;
+  updateEducationDataDrag: (newData: Education[]) => void;
   updateExperienceData: (newData: Experience) => void;
   updateCertificationData: (newData: Certification) => void;
   updateProfilData: (newData: Profil) => void;
@@ -67,6 +68,13 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
       education: [...prevData.education, newData],
     }));
   }
+  const updateEducationDataDrag = (newData: Education[]) => {
+    setResumeData((prevData) => ({
+      ...prevData,
+      education: prevData.education.splice(0, prevData.education.length, ...newData),
+    }));
+  }
+
   const updateExperienceData = (newData: Experience) => {
     setResumeData((prevData) => ({
 
@@ -107,7 +115,7 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
     }));
   }
   return (
-    <ResumeContext.Provider value={{ resumeData, updateResumeData, updateEducationData, updateExperienceData, updateCertificationData, updateProfilData, updateLanguageData,updateVolunteeringData,updateProjectsData }}>
+    <ResumeContext.Provider value={{ resumeData, updateResumeData, updateEducationData, updateEducationDataDrag, updateExperienceData, updateCertificationData, updateProfilData, updateLanguageData, updateVolunteeringData, updateProjectsData }}>
       {children}
     </ResumeContext.Provider>
   );

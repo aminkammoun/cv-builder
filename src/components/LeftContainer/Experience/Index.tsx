@@ -7,7 +7,8 @@ import ExperienceForm from './ExperienceForm';
 
 import { useResumeContext } from '../../../context/ResumeContext';
 import { Experience } from '../../../types/types';
-import Card from '../../../partials/Card';
+//import Card from '../../../partials/Card';
+import DraggableList from '../../../partials/DraggableList';
 
 
 const Index: React.FC = () => {
@@ -41,10 +42,11 @@ const Index: React.FC = () => {
             </div>
             <div>
                 {
-                    resumeData.experience && <div>
-                        
-                        <Card data={resumeData.experience} />
-                    </div>
+                    resumeData.experience && 
+                        <DraggableList data={resumeData.experience}></DraggableList>
+
+
+                  
                 }
 
             </div>

@@ -1,34 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-const DraggableList = ({ data }) => {
-    const initialData = [];
+const DraggableList = ({ data, handlesOnDragEnd }) => {
+    const [initialData, setInitialData] = useState([]);
+
     useEffect(() => {
 
         if (data != undefined) {
 
-            data.map((element, index) => {
-                element.id = index + 1;
-                initialData.push(element)
 
-            });
+
+            data.map((element, index) => {
+                element.id = '' + index + 1;
+            })
+            setInitialData(data)
         }
 
     }, [data])
-    const [items, setItems] = useState(initialData);
-    setTimeout(() => {
-        console.log(initialData)
 
-    }, 1000)
 
     const handleOnDragEnd = (result) => {
         if (!result.destination) return;
 
-        const newItems = Array.from(items);
+        const newItems = Array.from(initialData);
         const [reorderedItem] = newItems.splice(result.source.index, 1);
         newItems.splice(result.destination.index, 0, reorderedItem);
-
-        setItems(newItems);
+        setInitialData(newItems);
+        handlesOnDragEnd(newItems)
     };
 
     return (
@@ -36,15 +34,13 @@ const DraggableList = ({ data }) => {
             <Droppable droppableId="droppable">
                 {(provided) => (
                     <div
-                        className="bg-gray-900 p-4 rounded-lg shadow-lg"
+                        className="bg-gray-900 shadow-lg"
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                     >
                         {initialData.map((item, index) => (
                             <div>
-                                <h1>
-                                    {item}
-                                </h1>
+
                                 <Draggable key={item.id} draggableId={item.id} index={index}>
                                     {(provided) => (
                                         <div
@@ -53,7 +49,7 @@ const DraggableList = ({ data }) => {
                                             {...provided.dragHandleProps}
 
                                         >
-                                            <div key={index} className=" p-2 bg-gray-800   shadow-md">
+                                            <div key={index} className="p-1 w-full bg-bg-100 border-bg-200 border border-l-4 hover:bg-bg-200 shadow ">
                                                 <div className='flex justify-between'>
 
                                                     <span className="">

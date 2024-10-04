@@ -33,8 +33,9 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Initial Contact</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">AI Resume Builder</h4>
+              <p className="text-gray-600 text-xl text-center">Some people simply don’t enjoy writing resumes as much as we do.
+                That’s okay. Our AI Resume Writer is for you.</p>
             </div>
 
             {/* 2nd item */}
@@ -49,8 +50,8 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Discovery Session</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">GPT AI Assisted</h4>
+              <p className="text-gray-600 text-2xl text-center">Experience the cutting-edge technology of our AI-powered CV builder.</p>
             </div>
 
             {/* 3rd item */}
@@ -64,8 +65,8 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Contracting</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Resume Check</h4>
+              <p className="text-gray-600 text-2xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
 
             {/* 4th item */}
@@ -80,9 +81,10 @@ function FeaturesBlocks() {
                     <circle className="stroke-current text-blue-300" strokeLinecap="square" cx="12.571" cy="12.571" r="3.429" />
                   </g>
                 </g>
-              </svg>              
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Fast Prototyping</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </svg>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Easy to use
+               </h4>
+              <p className="text-gray-600 text-xl text-center">An easy-to-use builder that allows you to quickly and easily create a professional looking CV in minutes.</p>
             </div>
 
             {/* 5th item */}
@@ -97,7 +99,7 @@ function FeaturesBlocks() {
                 </g>
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Design Phase</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="text-gray-600 text-2xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
 
             {/* 6th item */}
@@ -114,7 +116,7 @@ function FeaturesBlocks() {
                 </g>
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Develop & Launch</h4>
-              <p className="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="text-gray-600 text-2xl text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
 
           </div>

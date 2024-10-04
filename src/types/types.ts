@@ -45,33 +45,44 @@ export interface Profil {
   website: string;
   Icon: string;
 }
-export interface Language{
+export interface Language {
   name: string;
   level: string;
 
 }
-export interface Certification{
+export interface Certification {
   name: string;
   issuer: string;
   rangeDate?: string;
   website?: string;
   summary?: string;
 }
-export interface Volunteering{
+export interface Volunteering {
   Organization: string;
   position: string;
   date: string;
   location: string;
   summary: string;
 }
-export interface Projects{
+export interface Projects {
   name: string;
   Description: string;
   rangeDate: string;
   location: string;
   summary: string;
 }
-export interface Style{
-  padding:number;
+export interface Style {
+  padding: number;
   color: string;
+}
+export interface User {
+  access_token: string;
+}
+
+export interface ProfileAuth {
+  id: string;
+  name: string;
+  email: string;
+  picture: string;
+  // Add other profile fields as needed
 }

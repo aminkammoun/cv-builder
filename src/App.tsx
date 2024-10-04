@@ -14,6 +14,7 @@ import Builder from './pages/Builder';
 import Doc from './pages/Doc';
 import { ResumeProvider } from './context/ResumeContext';
 import { PdfProvider } from './context/pdfContext';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 
@@ -39,6 +40,8 @@ function App() {
 
   return (
     <>
+      <GoogleOAuthProvider clientId='1005569368721-i38gscu50ukodvim78vvpg6dgophtrf9.apps.googleusercontent.com'>
+
       <PdfProvider>
         <ResumeProvider>
           <Routes>
@@ -51,6 +54,7 @@ function App() {
           </Routes>
         </ResumeProvider>
       </PdfProvider>
+      </GoogleOAuthProvider>
     </>
   );
 }
