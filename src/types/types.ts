@@ -86,3 +86,8 @@ export interface ProfileAuth {
   picture: string;
   // Add other profile fields as needed
 }
+export interface AvatarProps {
+  givenName: string;
+  familyName: string;  // Optional image URL
+  size?: string; // Size of the avatar, e.g., 'w-12 h-12'
+}

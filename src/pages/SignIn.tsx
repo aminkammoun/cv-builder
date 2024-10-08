@@ -1,62 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../partials/Header';
-import { GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import { ProfileAuth, User } from '../types/types';
 
 
 function SignIn() {
-  const [user, setUser] = useState<User | null>(null);
-  const [profile, setProfile] = useState<ProfileAuth | null>(null);
+
   const navigate = useNavigate(); // Initialize the navigate hook
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
-      setUser(codeResponse)
-      navigate('/');
+
+      axios
+        .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${codeResponse.access_token}`, {
+          headers: {
+            Authorization: `Bearer ${codeResponse.access_token}`,
+            Accept: 'application/json'
+          }
+        })
+        .then((res) => {
+          localStorage.setItem('user', JSON.stringify(res.data))
+          navigate('/');
+        })
+        .catch((err) => console.log(err));
+
     },
     onError: (error) => console.log('Login Failed:', error)
   });
-  const logOut = () => {
-    googleLogout();
-    setProfile(null);
-  };
+
   useEffect(() => {
     if (localStorage.getItem('user')) {
       navigate('/');
     }
   }, []);
-  useEffect(
-    () => {
 
-      if (user) {
-
-        axios
-          .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-            headers: {
-              Authorization: `Bearer ${user.access_token}`,
-              Accept: 'application/json'
-            }
-          })
-          .then((res) => {
-            setProfile(res.data);
-
-            localStorage.setItem('user', JSON.stringify({
-              "id": "111390558724442872030",
-              "email": "aminekammoun55@gmail.com",
-              "verified_email": true,
-              "name": "KAMMOUN Amine",
-              "given_name": "KAMMOUN",
-              "family_name": "Amine",
-              "picture": "https://lh3.googleusercontent.com/a/ACg8ocJIZpN_l7lmfvTNHPlPDDluTrfZHVNWI_-HHCEXwai-eChX_2g=s96-c"
-            }))
-          })
-          .catch((err) => console.log(err));
-      }
-    },
-    [user]
-  );
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -92,24 +70,14 @@ function SignIn() {
 
                 <div className="flex flex-wrap -mx-3">
 
-                  {profile ? (
-                    <div>
-                      <img src={profile.picture} alt="user image" />
-                      <h3>User Logged in</h3>
-                      <p>Name: {profile.name}</p>
-                      <p>Email Address: {profile.email}</p>
-                      <br />
-                      <br />
-                      <button onClick={logOut}>Log out</button>
-                    </div>
-                  ) : (
+                  {
                     <button className="btn px-0 text-white bg-red-600 hover:bg-red-700 w-full relative flex items-center" onClick={() => login()}>
                       <svg className="w-4 h-4 fill-current text-white opacity-75 flex-shrink-0 mx-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
                       </svg>
                       <span className="flex-auto pl-16 pr-8 -ml-16">Continue with Google</span>
                     </button>
-                  )}
+                  }
 
                 </div>
 

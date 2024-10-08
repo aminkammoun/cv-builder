@@ -44,11 +44,9 @@ useEffect(() => {
 const form = useForm<FormValues>()
 const { register, control, formState: { errors } } = form;
 
-const onSubmit = (e) => {
-
+const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    handleChange(educationData)
+    handleChange(educationData);
 };
 
 return (

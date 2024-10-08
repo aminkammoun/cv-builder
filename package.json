@@ -12,12 +12,16 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.9",
+    "@radix-ui/react-accordion": "^1.2.1",
     "@react-oauth/google": "^0.12.1",
     "@react-pdf/renderer": "^4.0.0",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
     "framer-motion": "^10.18.0",
+    "lucide-react": "^0.451.0",
     "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -26,7 +30,9 @@
     "react-router-dom": "^6.21.1",
     "react-transition-group": "^4.4.5",
     "react-zoom-pan-pinch": "^3.3.0",
-    "simple-icons": "^11.2.0"
+    "simple-icons": "^11.2.0",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",

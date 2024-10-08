@@ -19,7 +19,7 @@ interface GlobalInputProps {
 const Input: React.FC<GlobalInputProps> = ({ type, placeholder, content, label,value, required, register, error, onChange }) => {
     const ref = useRef(null);
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        register.onChange(e);
+        register?.onChange(e);
         // Extract the value from the event
         // Call the provided onChange function with the new value
         if (onChange) {

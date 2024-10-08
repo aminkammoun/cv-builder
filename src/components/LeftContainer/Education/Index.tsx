@@ -28,7 +28,7 @@ const Index: React.FC = () => {
     const handlesOnDragEnd = (data: Education[]) => {
         console.log('ml data')
         console.log(data)
-        resumeData.education.splice(0, resumeData.education.length, ...data)
+        resumeData?.education?.splice(0, resumeData.education.length, ...data)
         console.log(resumeData.education)
         updateEducationDataDrag(data)
     }

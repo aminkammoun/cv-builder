@@ -9,7 +9,7 @@ interface GenericModalProps {
   onClose: () => void;
 }
 
-const GenericModal: React.FC<GenericModalProps> = ({ formType, isOpen, onClose }) => {
+const GenericModal: React.FC<GenericModalProps> = ({  isOpen }) => {
   return (
     <div className={`modal ${isOpen ? 'block' : 'hidden'}`}>
       <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>

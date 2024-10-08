@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Dropdown from '../utils/Dropdown';
+import { LogOut, User, BrickWall, FileMinus } from 'lucide-react'
+import { googleLogout } from '@react-oauth/google';
 
+interface ProfileData {
+  email: string
+  family_name: string
+  given_name: string
+  id: string
+  name: string
+  picture: string
+  verified_email: true
+}
 function Header() {
 
   const [top, setTop] = useState(true);
-
+  const [profilAvatar, setProfilAvatar] = useState<ProfileData | null>(null);
   // detect whether user has scrolled the page down by 10px 
   useEffect(() => {
     const scrollHandler = () => {
@@ -14,8 +26,32 @@ function Header() {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, [top]);
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser) as ProfileData;
+      setProfilAvatar(user);
+    }
+  }, []);
+  const logOut = () => {
+    googleLogout();
+    localStorage.removeItem('user');
+    window.location.reload();
+  };
+  useEffect(() => {
+    if (profilAvatar) {
+      console.log(profilAvatar); // This will log once state is updated
+    }
+  }, [profilAvatar]);
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    if (profilAvatar) {
+      navigate('/profil', { state: { user: profilAvatar } });
+    }
+  };
   return (
-    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white backdrop-blur-sm shadow-lg'}`}>
+    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white  backdrop-blur-sm shadow-lg'}`}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
 
@@ -38,17 +74,35 @@ function Header() {
 
           {/* Site navigation */}
           {
-            localStorage.getItem('user') ? (
+            profilAvatar ? (
               // Render this if the user is logged in
               <nav className="flex flex-grow">
                 <ul className="flex flex-grow justify-end flex-wrap items-center">
+                  <Dropdown title={profilAvatar.name}>
 
-                  <li>
-                    <Link to="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                      <span>Profile</span>
+                    <div>
 
-                    </Link>
-                  </li>
+                      <Link to="#" className="flex px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"> <FileMinus className="mr-2 h-4 w-4" /> <span>My resumes</span></Link>
+                    </div>
+                    <div>
+
+                      <button
+                        onClick={handleProfileClick}
+                        className="flex w-full px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                      > <User className="mr-2 h-4 w-4" /> <span>Profil</span></button>
+                    </div>
+
+                    <div>
+
+                      <Link to="/builder" className="flex px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"> <BrickWall className="mr-2 h-4 w-4" /> <span>Builder</span></Link>
+                    </div>
+                    <hr></hr>
+                    <div>
+
+                      <button onClick={() => logOut()} className="flex w-full px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"> <LogOut className="mr-2 h-4 w-4" /> <span>Sign out</span></button>
+                    </div>
+                  </Dropdown>
+
                 </ul>
 
               </nav>
