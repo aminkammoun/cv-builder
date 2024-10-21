@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Home } from './Home'
 import HeroHome from '../partials/HeroHome'
 import FeaturesHome from '../partials/Features';

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import MediumDisplayData from './mediumDisplayData';
 const MediumGlobalDisplay = ({ Bigtitle, data }) => {
   const renderItems = () => {

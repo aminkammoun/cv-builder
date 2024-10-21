@@ -37,7 +37,11 @@ const mediumDisplayData: React.FC<GlobalMediumProps> = ({ tR, tL, bR, bL, summar
                     }</span>
             </div>
             {
-                summary && <p className="text-gray-600 break-words">{summary}</p>
+                summary && <ul >
+                    <li className="mb-1 text-gray-600 break-words">
+                        {summary}
+                    </li>
+                </ul> 
             }
         </div>
     )

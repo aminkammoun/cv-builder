@@ -1,4 +1,4 @@
-import React from 'react'
+
 import  SettingForm  from './SettingForm'
 const Index = () => {
   return (

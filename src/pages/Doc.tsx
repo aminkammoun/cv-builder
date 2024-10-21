@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { pdf } from '@react-pdf/renderer';
 import { saveAs } from 'file-saver'; // You'll need to use file-saver for handling the download
 import MediumDisplayData from '../partials/mediumDisplayData';

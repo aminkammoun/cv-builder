@@ -63,10 +63,13 @@ export const ResumeProvider: React.FC<ResumeProviderProps> = ({ children }) => {
     setResumeData(newData);
   };
   const updateEducationData = (newData: Education) => {
+    console.log('from education context')
+    console.log(newData)
     setResumeData((prevData) => ({
       ...prevData,
       education: [...prevData.education, newData],
     }));
+
   }
   const updateEducationDataDrag = (newData: Education[]) => {
     setResumeData((prevData) => ({

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/Transition';
 import aiCover from '../images/ai_how_works.9310123cdaf4.png';
 import portfolio from '../images/download.jpeg';

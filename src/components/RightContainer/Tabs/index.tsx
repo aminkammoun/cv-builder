@@ -1,7 +1,7 @@
 
 import Settings from '../Settings'
 import AiAssitance from '../AiAssitance'
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function TabsDefault() {
   const [activeTab, setActiveTab] = useState('AIAssistance');

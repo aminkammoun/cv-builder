@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Education from '../../MiddleContainer/Education/Index'
 import Experience from '../../MiddleContainer/Experience/Index'
 import Projects from '../../MiddleContainer/projects/Index'
